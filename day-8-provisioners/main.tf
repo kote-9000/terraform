@@ -88,7 +88,7 @@ resource "aws_instance" "server" {
 
     connection {
       type = "ssh"
-      user = "ec2-user"
+      user = "ubuntu"
       private_key = file("~/.ssh/id_rsa")
       host = self.public_ip
     }
@@ -101,7 +101,7 @@ resource "aws_instance" "server" {
      # file provisioner copy from local to remote
      provisioner "file" {
         source =  "file10"
-        destination ="/home/ec2-user/file10"
+        destination ="/home/ubuntu/file10"
        
      }
      #remote execution process
